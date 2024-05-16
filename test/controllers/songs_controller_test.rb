@@ -28,5 +28,21 @@ class SongsControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test "update" do
+    song = Song.first
+    patch "/Songs/#{song.id}.json", params: { title: "Updated title" }
+    assert_response 200
+
+    data = JSON.parse(response.body)
+    assert_equal "Updated title", data["title"]
+  end
+
+  test "destroy" do
+    assert_difference "Song.count", -1 do
+      delete "/Songs/#{Song.first.id}.json"
+      assert_response 200
+    end
+  end
+
 end
 
