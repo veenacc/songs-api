@@ -10,4 +10,7 @@ Rails.application.routes.draw do
 
   get "/Songs" => "songs#index"
   get "/Songs/:id" => "songs#show"
+  post "/Songs" => "songs#create"
+  # patch "/Songs/:id" => "songs#update"
+  # delete "/Songs/:id" => "songs#destroy"
 end

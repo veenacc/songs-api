@@ -5,3 +5,5 @@
  json.title song.title
  json.artist song.artist
  json.rating song.rating
+ json.created_at song.created_at
+ json.updated_at song.updated_at
